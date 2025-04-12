@@ -242,13 +242,11 @@
         function showNextSpan() {
             // Hide all spans
             typedTextSpans.forEach(span => {
-                span.style.opacity = '0';
-                span.style.transform = 'translateY(10px)';
+                span.classList.remove('active');
             });
 
             // Show current span
-            typedTextSpans[currentSpanIndex].style.opacity = '1';
-            typedTextSpans[currentSpanIndex].style.transform = 'translateY(0)';
+            typedTextSpans[currentSpanIndex].classList.add('active');
 
             // Update index for next iteration
             currentSpanIndex = (currentSpanIndex + 1) % typedTextSpans.length;

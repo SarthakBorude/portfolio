@@ -204,20 +204,31 @@ body {
     color: var(--primary-color);
     margin: 0.8rem auto 1.2rem;
     font-weight: 500;
-    height: 2em;
+    height: 1.5em;
     display: block;
     position: relative;
     text-align: center;
+    line-height: 1.5;
+    white-space: nowrap;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .typed-text span {
     position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     opacity: 0;
-    transform: translateY(10px);
+    white-space: nowrap;
+    width: auto;
     transition: all 0.3s ease;
+}
+
+.typed-text span.active {
+    opacity: 1;
+    transform: translate(-50%, -50%);
 }
 
 .typed-text span:nth-child(2) {
@@ -885,8 +896,7 @@ section:nth-child(even) {
     }
 
     .typed-text {
-        font-size: 1.2rem;
-        margin: 0.8rem auto 1rem;
+        font-size: 1.1rem;
     }
 
     .social-links {
@@ -957,7 +967,7 @@ section:nth-child(even) {
     }
 
     .typed-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .social-links {
