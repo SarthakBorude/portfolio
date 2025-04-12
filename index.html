@@ -235,6 +235,29 @@
     </footer>
 
     <script>
+        // Typed Text Animation
+        const typedTextSpans = document.querySelectorAll('.typed-text span');
+        let currentSpanIndex = 0;
+
+        function showNextSpan() {
+            // Hide all spans
+            typedTextSpans.forEach(span => {
+                span.style.opacity = '0';
+                span.style.transform = 'translateY(10px)';
+            });
+
+            // Show current span
+            typedTextSpans[currentSpanIndex].style.opacity = '1';
+            typedTextSpans[currentSpanIndex].style.transform = 'translateY(0)';
+
+            // Update index for next iteration
+            currentSpanIndex = (currentSpanIndex + 1) % typedTextSpans.length;
+        }
+
+        // Initial call and set interval
+        showNextSpan();
+        setInterval(showNextSpan, 4000);
+
         // Contact Form Handler
         const form = document.querySelector('.contact-form');
         const submitBtn = form.querySelector('.submit-btn');
